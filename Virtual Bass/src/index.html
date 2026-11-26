@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Bass Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>Virtual Bass Studio</h2>
+  <p>Tap frets, drag across a string to slide, or use your keyboard</p>
+
+  <div class="controls">
+    <label class="box">
+      <input type="checkbox" id="chkNotes"> Show Notes
+    </label>
+    <label class="box">
+      <input type="checkbox" id="chkKeys"> Show Keys
+    </label>
+    <label class="box">
+      <input type="checkbox" id="chk5Str"> 5-String
+    </label>
+    <div class="box">Sound:
+      <select id="selSound">
+        <option value="finger">Fingerstyle</option>
+        <option value="pick">Picked</option>
+        <option value="slap">Slap</option>
+        <option value="synth">Synth</option>
+      </select>
+    </div>
+    <div class="box">Tone:
+      <input type="range" id="rngTone" min="150" max="1500" value="500">
+    </div>
+    <div class="box">Sustain:
+      <input type="range" id="rngSus" min="0.4" max="3.5" step="0.1" value="1.5">
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="box">Scale:
+      <select id="selRoot">
+        <option value="none">Off</option>
+      </select>
+      <select id="selScale">
+        <option value="minP">Minor Pentatonic</option>
+        <option value="majP">Major Pentatonic</option>
+        <option value="maj">Major</option>
+        <option value="min">Natural Minor</option>
+        <option value="blu">Blues</option>
+      </select>
+    </div>
+    <div class="box">Lick:
+      <select id="selLick">
+        <option value="funk">Funk Octaves</option>
+        <option value="blues">12-Bar Blues</option>
+        <option value="rock">Rock Drive</option>
+        <option value="reggae">Reggae Drop</option>
+      </select>
+      <button id="btnLick">Play</button>
+    </div>
+    <div class="box">Drums:
+      <select id="selDrum">
+        <option value="rock">Rock</option>
+        <option value="funk">Funk</option>
+        <option value="reggae">Reggae</option>
+        <option value="metro">Metronome</option>
+      </select>
+      <input type="range" id="rngBpm" min="60" max="160" value="100">
+      <span id="txtBpm">100</span>
+      <button id="btnDrum">Beat</button>
+    </div>
+    <div class="box">Looper:
+      <button id="btnRec">Rec</button>
+      <button id="btnLoop" disabled>Loop</button>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <div id="board" class="fretboard"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
